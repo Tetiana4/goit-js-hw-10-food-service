@@ -41,4 +41,17 @@ function checkedFalse() {
     inputRef.checked = false;
 }
 
+function defoltOrMyTheme() {
+    const currentTheme = localStorage.getItem('theme');
 
+    if (currentTheme === Theme.LIGHT || currentTheme === null) {
+        checkedFalse();
+        return;
+    }
+
+    if (currentTheme === Theme.DARK) {
+        checkedTrue();
+        return;
+    }
+}
+defoltOrMyTheme();
